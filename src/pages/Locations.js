@@ -1,8 +1,4 @@
 import React from "react";
-import range from "lodash/range";
-
-const items = range(28);
-const sideLength = 28;
 
 const Locations = () => {
   return (
