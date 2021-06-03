@@ -1,0 +1,36 @@
+.container {
+  width: 140px;
+  height: min-content;
+  padding: 5px;
+}
+
+.card {
+  position: relative;
+}
+
+.cardContent {
+  text-align: center;
+  background-color: transparent;
+  color: #393e46;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cardMedia {
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cardMedia:hover {
+  opacity: 1;
+}
+
+.cardActionArea {
+  width: 100%;
+}

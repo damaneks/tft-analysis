@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Locations from "./pages/Locations";
 import Models from "./pages/Models";
-import Navigation from "./components/navbar/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import Popularity from "./pages/Popularity";
 import Players from "./pages/Players";
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className={styles.App}>
-          <Navigation></Navigation>
+          <Navbar />
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/locations" component={Locations} />
