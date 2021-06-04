@@ -8,6 +8,7 @@ const LocationChart = ({ data }) => {
     <div className={styles.container}>
       <ResponsiveHeatMap
         data={data}
+        theme={{ fontSize: 5 }}
         keys={[
           "column1",
           "column2",
