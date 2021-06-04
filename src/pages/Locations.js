@@ -6,7 +6,6 @@ import { championList } from "../data/championsList";
 const Locations = () => {
   const [champion, setChampion] = useState("global");
   const [data, setData] = useState([]);
-  const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -23,7 +22,6 @@ const Locations = () => {
       .then((data) => {
         console.log(data);
         setData(data);
-        setLocations(data["global"]);
       })
       .catch((error) => {
         console.error("Error fetching data");
@@ -34,17 +32,13 @@ const Locations = () => {
       });
   }, []);
 
-  useEffect(() => {
-    setLocations(data[champion]);
-  }, [champion]);
-
   if (loading) return <h1>Loading...</h1>;
   if (error) return "Error!";
 
   return (
     <div className="locations">
       <h1>{champion}</h1>
-      <LocationChart data={locations} />
+      <LocationChart data={data[champion]} />
       <div className="championsContainer">
         {championList.map((championName) => (
           <ChampionCard
