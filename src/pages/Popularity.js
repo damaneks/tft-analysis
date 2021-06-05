@@ -56,6 +56,7 @@ const Popularity = () => {
             console.error("Error fetching data" + error);
             setError(true);
           })
+          // eslint-disable-next-line
           .finally(() => {
             filesToLoad = filesToLoad - 1;
             console.log(filesToLoad);
@@ -102,6 +103,7 @@ const Popularity = () => {
           setLoading(false);
         });
     }
+    // eslint-disable-next-line
   }, [compareType, champions, players]);
 
   useEffect(() => {
