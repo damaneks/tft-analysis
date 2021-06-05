@@ -1,0 +1,16 @@
+.MuiFormControl-root {
+  margin: 5px;
+  width: 80%;
+}
+
+.MuiTypography-root {
+  color: #eeeeee !important;
+}
+
+.MuiInputBase-input {
+  color: #eeeeee !important;
+}
+
+.MuiFormLabel-root {
+  color: #eeeeee !important;
+}

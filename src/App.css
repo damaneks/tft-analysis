@@ -22,7 +22,25 @@ body {
   font-size: 3rem;
 }
 
-.championsContainer {
+.chart-div {
+  display: flex;
+  width: 100%;
+  height: 80%;
+}
+
+.left-div {
+  width: 70%;
+}
+
+.right-div {
+  width: 30%;
+}
+
+.right-div h1 {
+  font-size: 2rem;
+}
+
+.champions-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

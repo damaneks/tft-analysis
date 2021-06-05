@@ -37,9 +37,15 @@ const Locations = () => {
 
   return (
     <div className="locations">
-      <h1>{champion}</h1>
-      <LocationChart data={data[champion]} />
-      <div className="championsContainer">
+      <div className="chart-div">
+        <div className="left-div">
+          <LocationChart data={data[champion]} />
+        </div>
+        <div className="right-div">
+          <h1>{champion}</h1>
+        </div>
+      </div>
+      <div className="champions-container">
         {championList.map((championName) => (
           <ChampionCard
             championName={championName}

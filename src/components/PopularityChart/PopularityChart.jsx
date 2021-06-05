@@ -4,7 +4,6 @@ import { ResponsiveLine } from "nivo";
 import styles from "./PopularityChart.module.css";
 
 const PopularityChart = ({ data }) => {
-  console.log(data);
   return (
     <div className={styles.container}>
       <ResponsiveLine
@@ -24,7 +23,7 @@ const PopularityChart = ({ data }) => {
             fontSize: 24,
           },
         }}
-        margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+        margin={{ top: 10, right: 50, bottom: 50, left: 50 }}
         axisBottom={{
           tickRotation: 45,
         }}

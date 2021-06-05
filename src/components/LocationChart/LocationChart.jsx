@@ -19,7 +19,7 @@ const LocationChart = ({ data }) => {
           "column7",
         ]}
         indexBy="row"
-        margin={{ top: 60, right: 60, bottom: 60, left: 60 }}
+        margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
         forceSquare={true}
         padding={5}
         axisTop={null}
