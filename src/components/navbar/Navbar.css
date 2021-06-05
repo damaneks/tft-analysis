@@ -6,6 +6,7 @@
   position: sticky;
   justify-content: flex-start;
   align-items: center;
+  z-index: 10000;
 }
 
 .menu-bars {

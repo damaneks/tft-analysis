@@ -5,10 +5,6 @@ body {
   background-color: #393e46;
 }
 
-.App {
-  background-color: aqua;
-}
-
 .home,
 .locations,
 .models,
@@ -19,7 +15,7 @@ body {
   height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 12;
 }
 
 .chart-div {
@@ -29,11 +25,25 @@ body {
 }
 
 .left-div {
-  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+  padding: 2%;
+  margin: 2%;
+  width: 60%;
+  box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
 }
 
 .right-div {
   width: 30%;
+  margin: 2%;
+}
+
+.locations-right-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right-div h1 {
@@ -45,6 +55,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 20px;
   width: 100%;
 }
 
@@ -54,7 +65,8 @@ h1 {
   font-size: 10vmax;
   font-weight: 800;
   line-height: 72px;
-  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
 }

@@ -136,7 +136,11 @@ const Popularity = () => {
     <div className="popularity">
       <div className="chart-div">
         <div className="left-div">
-          {!loading ? <PopularityChart data={data} /> : <h1>Loading...</h1>}
+          {!loading ? (
+            <PopularityChart data={data} />
+          ) : (
+            <h1 style={{ color: "#393e46" }}>Loading...</h1>
+          )}
         </div>
         <div className="right-div">
           <h1 style={{ fontSize: "2.75rem" }}>Popularity</h1>

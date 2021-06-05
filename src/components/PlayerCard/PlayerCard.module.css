@@ -1,0 +1,89 @@
+.bigContainer {
+  height: 300px;
+  width: 300px;
+  margin: 40px 20px 0px 20px;
+}
+.container {
+  width: 90%;
+  padding-top: 90%;
+  position: relative;
+}
+
+.tail {
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  background-color: #99aeff;
+  display: inline-block;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 1);
+  overflow: hidden;
+  color: white;
+  font-family: "Roboto";
+}
+
+.tailImg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: all 0.4s ease-out;
+}
+.tail .text {
+  position: absolute;
+  padding: 30px;
+  height: calc(100% - 60px);
+}
+.tailH1 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+.tailH2 {
+  font-weight: 100;
+  font-size: 1.25rem;
+  margin: 0px 0 0 0;
+  font-style: italic;
+  transform: translateX(200px);
+}
+.tailP {
+  font-weight: 300;
+  font-size: 1rem;
+  margin: 10px 0 0 0;
+  line-height: 20px;
+  transform: translateX(-200px);
+  transition-delay: 0.2s;
+}
+.animateText {
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+.tail:hover {
+  background-color: #00adb5;
+  box-shadow: 0px 35px 77px -17px rgba(0, 0, 0, 0.64);
+  transform: scale(1.05);
+}
+.tail:hover .tailImg {
+  opacity: 0.2;
+}
+.tail:hover .animateText {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .wrap {
+    flex-direction: column;
+    width: 400px;
+  }
+}

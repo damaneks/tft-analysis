@@ -1,0 +1,81 @@
+.container {
+  width: 90%;
+  padding-top: 90%;
+  position: relative;
+}
+
+.tile {
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  background-color: #99aeff;
+  display: inline-block;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 1);
+  overflow: hidden;
+  color: white;
+  font-family: "Roboto";
+}
+
+.tile img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: all 0.4s ease-out;
+}
+.tile .text {
+  position: absolute;
+  padding: 30px;
+  height: calc(100% - 60px);
+}
+.tile h1 {
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+.tile h2 {
+  font-weight: 100;
+  margin: 0px 0 0 0;
+  font-style: italic;
+  transform: translateX(200px);
+}
+.tile p {
+  font-weight: 300;
+  margin: 10px 0 0 0;
+  line-height: 20px;
+  transform: translateX(-200px);
+  transition-delay: 0.2s;
+}
+.animate-text {
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+.tile:hover {
+  background-color: #00adb5;
+  box-shadow: 0px 35px 77px -17px rgba(0, 0, 0, 0.64);
+  transform: scale(1.05);
+}
+.tile:hover img {
+  opacity: 0.2;
+}
+.tile:hover .animate-text {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .wrap {
+    flex-direction: column;
+    width: 400px;
+  }
+}

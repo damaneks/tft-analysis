@@ -25,7 +25,7 @@ const PopularityChart = ({ data }) => {
         }}
         margin={{ top: 10, right: 50, bottom: 50, left: 50 }}
         axisBottom={{
-          tickRotation: 45,
+          tickRotation: 60,
         }}
         legends={[
           {

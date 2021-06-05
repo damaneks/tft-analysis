@@ -1,9 +1,14 @@
 import React from "react";
 
+import PlayerCard from "../components/PlayerCard/PlayerCard";
+import { fullPlayerList } from "../data/playersList";
+
 const Players = () => {
   return (
     <div className="players">
-      <h1>Players</h1>
+      {fullPlayerList.map((player) => (
+        <PlayerCard playerName={player} />
+      ))}
     </div>
   );
 };

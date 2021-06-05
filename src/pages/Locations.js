@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LocationChart from "../components/LocationChart/LocationChart";
+import ChampionButton from "../components/ChampionButton/ChampionButton";
 import ChampionCard from "../components/ChampionCard/ChampionCard";
 import { championList } from "../data/championsList";
 
@@ -32,22 +33,25 @@ const Locations = () => {
       });
   }, []);
 
-  if (loading) return <h1>Loading...</h1>;
   if (error) return "Error!";
 
   return (
     <div className="locations">
       <div className="chart-div">
         <div className="left-div">
-          <LocationChart data={data[champion]} />
+          {!loading ? (
+            <LocationChart data={data[champion]} />
+          ) : (
+            <h1 style={{ color: "#393e46" }}>Loading...</h1>
+          )}
         </div>
-        <div className="right-div">
-          <h1>{champion}</h1>
+        <div className="right-div locations-right-div">
+          {champion !== "global" && <ChampionCard championName={champion} />}
         </div>
       </div>
       <div className="champions-container">
         {championList.map((championName) => (
-          <ChampionCard
+          <ChampionButton
             championName={championName}
             clickEvent={() => setChampion(championName)}
           />

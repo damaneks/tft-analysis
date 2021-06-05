@@ -9,6 +9,7 @@
 
 .MuiInputBase-input {
   color: #eeeeee !important;
+  text-transform: capitalize;
 }
 
 .MuiFormLabel-root {
