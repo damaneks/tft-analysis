@@ -49,10 +49,12 @@
   font-style: italic;
   transform: translateX(200px);
 }
+
 .tile p {
   font-weight: 300;
   margin: 10px 0 0 0;
   line-height: 20px;
+  font-size: small;
   transform: translateX(-200px);
   transition-delay: 0.2s;
 }

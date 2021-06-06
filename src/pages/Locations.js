@@ -33,13 +33,11 @@ const Locations = () => {
       });
   }, []);
 
-  if (error) return "Error!";
-
   return (
     <div className="locations">
       <div className="chart-div">
         <div className="left-div">
-          {!loading ? (
+          {!loading && !error ? (
             <LocationChart data={data[champion]} />
           ) : (
             <h1 style={{ color: "#393e46" }}>Loading...</h1>

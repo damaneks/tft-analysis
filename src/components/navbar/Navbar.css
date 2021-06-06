@@ -1,12 +1,18 @@
 .navbar {
   background-color: #00adb5;
-  height: 80px;
+  height: 50px;
   display: flex;
   top: 0px;
   position: sticky;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #007075;
+  box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.5);
   z-index: 10000;
+}
+
+.patchInfo {
+  padding-right: 30px;
 }
 
 .menu-bars {
@@ -17,13 +23,14 @@
 
 .nav-menu {
   background-color: #00adb5;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
   height: 100vh;
   display: flex;
   justify-content: center;
   position: fixed;
   left: -100%;
   transition: 850ms;
-  z-index: 10000;
+  z-index: 5000;
 }
 
 .nav-menu.active {
@@ -36,13 +43,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px 0px 8px 0px;
+  border-bottom: 2px solid #007075;
   list-style: none;
   height: 60px;
 }
 
 .nav-text a {
   text-decoration: none;
+  text-transform: uppercase;
   color: #eeeeee;
   font-size: 24px;
   width: 100%;

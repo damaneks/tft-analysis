@@ -19,13 +19,62 @@ const Popularity = () => {
 
   useEffect(() => {
     setLoading(true);
-    if (compareType === "champions") {
-      var filesToLoad = players.length;
-      var array = [];
-      for (const player of players) {
+    if (champions.length !== 0 && players.length !== 0) {
+      if (compareType === "champions") {
+        var filesToLoad = players.length;
+        var array = [];
+        for (const player of players) {
+          fetch(
+            "https://raw.githubusercontent.com/damaneks/tft_detector/main/detections/players/" +
+              player.toLowerCase() +
+              ".json"
+          )
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              }
+              throw response;
+            })
+            .then((gatheredData) => {
+              if (array.length === 0) {
+                for (const champ of champions) {
+                  array.push(gatheredData[champ]);
+                }
+              } else {
+                var champIndex = 0;
+                for (const champ of champions) {
+                  var elemIndex = 0;
+                  for (const elem of gatheredData[champ]["data"]) {
+                    array[champIndex]["data"][elemIndex]["y"] =
+                      array[champIndex]["data"][elemIndex]["y"] + elem["y"];
+                    elemIndex++;
+                  }
+                  champIndex++;
+                }
+              }
+            })
+            .catch((error) => {
+              console.error("Error fetching data" + error);
+              setError(true);
+            })
+            // eslint-disable-next-line
+            .finally(() => {
+              filesToLoad = filesToLoad - 1;
+              console.log(filesToLoad);
+              if (filesToLoad === 0) {
+                setData(array);
+                setLoading(false);
+              }
+            });
+        }
+      } else {
+        var champName = champions;
+        if (champions[0].length > 1) {
+          champName = champions[0];
+        }
         fetch(
-          "https://raw.githubusercontent.com/damaneks/tft_detector/main/detections/players/" +
-            player.toLowerCase() +
+          "https://raw.githubusercontent.com/damaneks/tft_detector/main/detections/champions/" +
+            champName +
             ".json"
         )
           .then((response) => {
@@ -34,74 +83,27 @@ const Popularity = () => {
             }
             throw response;
           })
-          .then((gatheredData) => {
-            if (array.length === 0) {
-              for (const champ of champions) {
-                array.push(gatheredData[champ]);
+          .then((data) => {
+            const array = [];
+            if (compareType === "players") {
+              for (const player of players) {
+                array.push(data[player]);
               }
-            } else {
-              var champIndex = 0;
-              for (const champ of champions) {
-                var elemIndex = 0;
-                for (const elem of gatheredData[champ]["data"]) {
-                  array[champIndex]["data"][elemIndex]["y"] =
-                    array[champIndex]["data"][elemIndex]["y"] + elem["y"];
-                  elemIndex++;
-                }
-                champIndex++;
+            } else if (compareType === "regions") {
+              for (const region of regions) {
+                array.push(data[region]);
               }
             }
+            setData(array);
           })
           .catch((error) => {
             console.error("Error fetching data" + error);
             setError(true);
           })
-          // eslint-disable-next-line
           .finally(() => {
-            filesToLoad = filesToLoad - 1;
-            console.log(filesToLoad);
-            if (filesToLoad === 0) {
-              setData(array);
-              setLoading(false);
-            }
+            setLoading(false);
           });
       }
-    } else {
-      var champName = champions;
-      if (champions[0].length > 1) {
-        champName = champions[0];
-      }
-      fetch(
-        "https://raw.githubusercontent.com/damaneks/tft_detector/main/detections/champions/" +
-          champName +
-          ".json"
-      )
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw response;
-        })
-        .then((data) => {
-          const array = [];
-          if (compareType === "players") {
-            for (const player of players) {
-              array.push(data[player]);
-            }
-          } else if (compareType === "regions") {
-            for (const region of regions) {
-              array.push(data[region]);
-            }
-          }
-          setData(array);
-        })
-        .catch((error) => {
-          console.error("Error fetching data" + error);
-          setError(true);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
     }
     // eslint-disable-next-line
   }, [compareType, champions, players]);
@@ -130,13 +132,11 @@ const Popularity = () => {
     setChampions(championsArray);
   }, [championsCost]);
 
-  if (error) return <h1>Error!"</h1>;
-
   return (
     <div className="popularity">
       <div className="chart-div">
         <div className="left-div">
-          {!loading ? (
+          {!loading && !error ? (
             <PopularityChart data={data} />
           ) : (
             <h1 style={{ color: "#393e46" }}>Loading...</h1>

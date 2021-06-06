@@ -1,5 +1,5 @@
 .MuiFormControl-root {
-  margin: 5px;
+  margin: 10px !important;
   width: 80%;
 }
 
@@ -9,6 +9,14 @@
 
 .MuiInputBase-input {
   color: #eeeeee !important;
+  text-transform: capitalize;
+}
+
+.MuiSvgIcon-root {
+  color: #00adb5 !important;
+}
+
+.MuiMenuItem-root {
   text-transform: capitalize;
 }
 

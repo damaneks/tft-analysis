@@ -14,7 +14,7 @@
   width: 100%;
   margin: 10px;
   background-color: #99aeff;
-  display: inline-block;
+  display: flex;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -42,6 +42,9 @@
   position: absolute;
   padding: 30px;
   height: calc(100% - 60px);
+  width: calc(100% - 60px);
+  align-items: stretch;
+  justify-content: space-between;
 }
 .tailH1 {
   font-weight: 900;
@@ -55,14 +58,37 @@
   margin: 0px 0 0 0;
   font-style: italic;
   transform: translateX(200px);
+  text-align: center;
 }
+
+.dataContainer {
+  display: block;
+  transform: translateX(200px);
+  transition-delay: 0.2s;
+  margin: 1%;
+  margin-top: 5%;
+  width: 100%;
+}
+
+.dataColumn {
+  display: inline-block;
+  text-align: center;
+  width: 32%;
+  border-right: 1px solid black;
+}
+
+.dataLastColumn {
+  border-right: 0px solid black !important;
+}
+
 .tailP {
   font-weight: 300;
-  font-size: 1rem;
+  font-size: small;
   margin: 10px 0 0 0;
   line-height: 20px;
   transform: translateX(-200px);
   transition-delay: 0.2s;
+  text-align: center;
 }
 .animateText {
   opacity: 0;
