@@ -21,7 +21,6 @@ const Locations = () => {
         throw response;
       })
       .then((data) => {
-        console.log(data);
         setData(data);
       })
       .catch((error) => {

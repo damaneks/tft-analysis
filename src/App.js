@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import Popularity from "./pages/Popularity";
 import Players from "./pages/Players";
+import Conclusions from "./pages/Conclusions";
 
 import styles from "./App.css";
 
@@ -22,6 +23,7 @@ class App extends React.Component {
             <Route path="/models" component={Models} />
             <Route path="/popularity" component={Popularity} />
             <Route path="/players" component={Players} />
+            <Route path="/conclusions" component={Conclusions} />
           </Switch>
         </div>
       </BrowserRouter>

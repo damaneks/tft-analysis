@@ -3,7 +3,7 @@ import { ResponsiveHeatMap } from "nivo";
 
 import styles from "./LocationChart.module.css";
 
-const LocationChart = ({ data }) => {
+const LocationChart = ({ data, ifAnimate = true }) => {
   return (
     <div className={styles.container}>
       <ResponsiveHeatMap
@@ -41,7 +41,7 @@ const LocationChart = ({ data }) => {
           },
         ]}
         fill={[{ id: "lines" }]}
-        animate={true}
+        animate={ifAnimate}
         motionConfig="wobbly"
         motionStiffness={80}
         motionDamping={9}
