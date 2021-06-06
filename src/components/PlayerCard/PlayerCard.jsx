@@ -23,22 +23,20 @@ const PlayerCard = ({ playerName }) => {
               <h2 className={`${styles.animateText} ${styles.tailH2}`}>
                 Region: {playersListDescription[playerName]["region"]}
               </h2>
-              <p className={`${styles.tailP} ${styles.animateText}`}>
-                Polish TFT player
-              </p>
+              <p className={`${styles.tailP} ${styles.animateText}`}></p>
               <div className={`${styles.dataContainer} ${styles.animateText}`}>
                 <div className={`${styles.dataColumn}`}>
-                  <h3>100</h3>
+                  <h3>{playersListDescription[playerName]["played"]}</h3>
                   Played
                 </div>
                 <div className={`${styles.dataColumn}`}>
-                  <h3>100</h3>
+                  <h3>{playersListDescription[playerName]["wins"]}</h3>
                   Wins
                 </div>
                 <div
                   className={`${styles.dataColumn} ${styles.dataLastColumn}`}
                 >
-                  <h3>100</h3>
+                  <h3>{playersListDescription[playerName]["top4"]}</h3>
                   Top 4
                 </div>
               </div>

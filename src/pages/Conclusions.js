@@ -55,6 +55,16 @@ const Conclusions = () => {
           <Conclusion champions={["khazix", "viego"]}>
             Kha i odizolowane cele
           </Conclusion>
+
+          <Conclusion
+            chartType={"popularity"}
+            champions={["khazix", "gragas"]}
+            compareType={"champions"}
+            players={["Zbrojson", "Kiyoon"]}
+            title={"test"}
+          >
+            Kha i odizolowane cele
+          </Conclusion>
         </section>
       </article>
     </div>
