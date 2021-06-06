@@ -23,3 +23,9 @@
 .MuiFormLabel-root {
   color: #eeeeee !important;
 }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 6vmax !important;
+  }
+}

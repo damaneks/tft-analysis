@@ -7,7 +7,6 @@
 .tile {
   height: 100%;
   width: 100%;
-  margin: 10px;
   background-color: #99aeff;
   display: inline-block;
   background-size: cover;
@@ -76,9 +75,20 @@
   opacity: 1;
 }
 
-@media (max-width: 1000px) {
-  .wrap {
-    flex-direction: column;
-    width: 400px;
+@media (max-width: 600px) {
+  .container {
+    height: 85%;
+    padding-left: 85%;
+    width: unset;
+    padding-top: unset;
+  }
+
+  .tile .text {
+    padding-top: 0px;
+  }
+
+  .tile h1 {
+    font-size: large !important;
+    height: calc(100% - 60px);
   }
 }
