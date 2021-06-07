@@ -16,21 +16,6 @@ const PopularityChart = ({
     <div className={styles.container}>
       <ResponsiveLine
         data={data}
-        theme={{
-          background: "#eeeeee",
-          fontSize: 24,
-          axis: {
-            fontSize: 24,
-            legend: {
-              text: {
-                fontSize: 24,
-              },
-            },
-          },
-          labels: {
-            fontSize: 24,
-          },
-        }}
         margin={{ top: 10, right: 50, bottom: 50, left: 50 }}
         axisLeft={axisLeft}
         axisBottom={axisBottom}

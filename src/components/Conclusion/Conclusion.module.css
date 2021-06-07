@@ -12,8 +12,7 @@
   width: 30%;
   height: 250px;
   text-align: center;
-  padding: 10px;
-  padding-top: 0px;
+  padding: 0px;
   display: flex;
 }
 
@@ -32,6 +31,6 @@
 @media (max-width: 600px) {
   .box {
     flex-direction: column;
-    width: 100%;
+    width: 100% !important;
   }
 }

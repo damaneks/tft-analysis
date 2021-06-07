@@ -8,6 +8,8 @@ const SpecificPopularityChart = ({
   compareType,
   players,
   title,
+  start = "2-1",
+  end = "7-6",
   regions = ["Europe", "America", "Asia"],
 }) => {
   const [data, setData] = React.useState([]);
@@ -16,7 +18,7 @@ const SpecificPopularityChart = ({
 
   React.useEffect(() => {
     setLoading(true);
-    if (champions.length !== 0 && players.length !== 0) {
+    if (champions.length !== null && players.length !== 0) {
       if (compareType === "champions") {
         var filesToLoad = players.length;
         var array = [];
@@ -35,16 +37,24 @@ const SpecificPopularityChart = ({
             .then((gatheredData) => {
               if (array.length === 0) {
                 for (const champ of champions) {
-                  array.push(gatheredData[champ]);
+                  const champDict = { id: champ, data: [] };
+                  for (const elem of gatheredData[champ]["data"]) {
+                    if (elem["x"] >= start && elem["x"] <= end) {
+                      champDict["data"].push(elem);
+                    }
+                  }
+                  array.push(champDict);
                 }
               } else {
                 var champIndex = 0;
                 for (const champ of champions) {
                   var elemIndex = 0;
                   for (const elem of gatheredData[champ]["data"]) {
-                    array[champIndex]["data"][elemIndex]["y"] =
-                      array[champIndex]["data"][elemIndex]["y"] + elem["y"];
-                    elemIndex++;
+                    if (elem["x"] >= start && elem["x"] <= end) {
+                      array[champIndex]["data"][elemIndex]["y"] =
+                        array[champIndex]["data"][elemIndex]["y"] + elem["y"];
+                      elemIndex++;
+                    }
                   }
                   champIndex++;
                 }
@@ -81,15 +91,26 @@ const SpecificPopularityChart = ({
             throw response;
           })
           .then((data) => {
-            console.log(data);
             const array = [];
             if (compareType === "players") {
               for (const player of players) {
-                array.push(data[player]);
+                const playerDict = { id: player, data: [] };
+                for (const elem of data[player]["data"]) {
+                  if (elem["x"] >= start && elem["x"] <= end) {
+                    playerDict["data"].push(elem);
+                  }
+                }
+                array.push(playerDict);
               }
             } else if (compareType === "regions") {
               for (const region of regions) {
-                array.push(data[region]);
+                const regionDict = { id: region, data: [] };
+                for (const elem of data[region]["data"]) {
+                  if (elem["x"] >= start && elem["x"] <= end) {
+                    regionDict["data"].push(elem);
+                  }
+                }
+                array.push(regionDict);
               }
             }
             setData(array);
@@ -110,7 +131,7 @@ const SpecificPopularityChart = ({
     <div className={styles.container}>
       <h3 className={styles.title}>{title}</h3>
       {!loading && !error ? (
-        <PopularityChart data={data} axisBottom={null} axisLeft={null} />
+        <PopularityChart data={data} axisLeft={null} fontSize={50} />
       ) : (
         <h1 style={{ color: "#393e46", fontSize: "2vmax" }}>Loading...</h1>
       )}

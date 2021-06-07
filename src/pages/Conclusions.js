@@ -1,6 +1,7 @@
 import React from "react";
 import Conclusion from "../components/Conclusion/Conclusion";
-
+import { fullPlayerList } from "../data/playersList";
+import { championList, championsListByCost } from "../data/championsList";
 const Conclusions = () => {
   return (
     <div className="conclusions">
@@ -58,12 +59,116 @@ const Conclusions = () => {
 
           <Conclusion
             chartType={"popularity"}
-            champions={["khazix", "gragas"]}
+            champions={[championList]}
             compareType={"champions"}
-            players={["Zbrojson", "Kiyoon"]}
-            title={"test"}
+            players={[fullPlayerList]}
+            titles={["Global"]}
+            box={"full"}
+            width={"100%"}
           >
-            Kha i odizolowane cele
+            Info o ogólnych statystykach
+          </Conclusion>
+
+          <Conclusion
+            chartType={"popularity"}
+            champions={[championsListByCost[1], championsListByCost[2]]}
+            compareType={"champions"}
+            players={[fullPlayerList, fullPlayerList]}
+            titles={["1 Cost", "2 Cost"]}
+            end={"3-6"}
+            box={"full"}
+            width={"45%"}
+          >
+            Early Game
+          </Conclusion>
+
+          <Conclusion
+            chartType={"popularity"}
+            champions={[championsListByCost[4], championsListByCost[5]]}
+            compareType={"champions"}
+            players={[fullPlayerList, fullPlayerList]}
+            titles={["4 Cost", "5 Cost"]}
+            start={"5-1"}
+            box={"full"}
+            width={"45%"}
+          >
+            Late Game
+          </Conclusion>
+
+          <Conclusion
+            chartType={"popularity"}
+            champions={[
+              "aatrox",
+              "gragas",
+              "kled",
+              "leona",
+              "poppy",
+              "udyr",
+              "warwick",
+              "vladimir",
+            ]}
+            compareType={"regions"}
+            players={[fullPlayerList]}
+            titles={[
+              "aatrox",
+              "gragas",
+              "kled",
+              "leona",
+              "poppy",
+              "udyr",
+              "warwick",
+              "vladimir",
+            ]}
+            end={"2-6"}
+            width={"20%"}
+            height={"150px"}
+          >
+            Regions Early Game Defensive
+          </Conclusion>
+
+          <Conclusion
+            chartType={"popularity"}
+            champions={["kalista", "khazix", "lissandra", "vayne", "ziggs"]}
+            compareType={"regions"}
+            players={[fullPlayerList]}
+            titles={["kalista", "khazix", "lissandra", "vayne", "ziggs"]}
+            end={"2-6"}
+            width={"20%"}
+            height={"150px"}
+          >
+            Regions Early Game Ofensive
+          </Conclusion>
+
+          <Conclusion
+            chartType={"popularity"}
+            champions={[
+              "draven",
+              "riven",
+              "yasuo",
+              "brand",
+              "aphelios",
+              "karma",
+              "teemo",
+              "velkoz",
+            ]}
+            compareType={"regions"}
+            players={[fullPlayerList]}
+            titles={[
+              "draven",
+              "riven",
+              "yasuo",
+              "brand",
+              "aphelios",
+              "karma",
+              "teemo",
+              "velkoz",
+            ]}
+            start={"5-1"}
+            end={"6-6"}
+            width={"20%"}
+            height={"150px"}
+          >
+            Regions Late Game Carries
           </Conclusion>
         </section>
       </article>

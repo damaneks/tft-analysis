@@ -142,8 +142,4 @@ article {
   .locations-right-div {
     order: -1 !important;
   }
-
-  text {
-    visibility: hidden;
-  }
 }
