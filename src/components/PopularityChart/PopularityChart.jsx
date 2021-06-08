@@ -19,32 +19,6 @@ const PopularityChart = ({
         margin={{ top: 10, right: 50, bottom: 50, left: 50 }}
         axisLeft={axisLeft}
         axisBottom={axisBottom}
-        legends={[
-          {
-            anchor: "bottom",
-            direction: "row",
-            justify: false,
-            translateX: -28,
-            translateY: 60,
-            itemsSpacing: 0,
-            itemDirection: "left-to-right",
-            itemWidth: 80,
-            itemHeight: 20,
-            itemOpacity: 0.75,
-            symbolSize: 9,
-            symbolShape: "circle",
-            symbolBorderColor: "rgba(0, 0, 0, .5)",
-            effects: [
-              {
-                on: "hover",
-                style: {
-                  itemBackground: "rgba(0, 0, 0, .03)",
-                  itemOpacity: 1,
-                },
-              },
-            ],
-          },
-        ]}
       />
     </div>
   );
