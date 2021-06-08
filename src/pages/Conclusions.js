@@ -270,18 +270,19 @@ const Conclusions = () => {
 
           <Conclusion
             chartType={"popularity"}
-            champions={["aatrox", "ziggs"]}
+            champions={["aatrox", "ziggs", "ashe"]}
             compareType={"regions"}
             players={[fullPlayerList]}
-            titles={["aatrox", "ziggs"]}
-            end={["2-6"]}
+            titles={["aatrox", "ziggs", "ashe"]}
+            start={["2-1", "2-1", "3-1"]}
+            end={["2-6", "2-6", "4-6"]}
             width={"30%"}
             height={"150px"}
           >
-            The units played in each region were very similar to each other.
-            Only Asia differed from the rest in individual cases. For example,
-            Aatrox and Ziggs were played more often in Asia than in Europe or
-            America.
+            The units played in each region did not vary much. Only Asia in
+            isolated cases stood out from the rest. For example, in contrast to
+            Europe and America, Aatrox and Ziggs were played more often and Ashe
+            was only played once.
           </Conclusion>
         </section>
       </article>
