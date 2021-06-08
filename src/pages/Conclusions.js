@@ -68,8 +68,8 @@ const Conclusions = () => {
             units is that they stand in column 6 just as often as in column 7.
             This is because there is a Thresh unit in the game whose ability
             pulls a character from the opposite corner. To avoid eliminating a
-            major source of damage, players seeing a Thresh in the opponent's
-            camp often choose to place their Carry unit in column 6 or 2.
+            major source of damage, players seeing Thresh in the opponent's camp
+            often choose to place their Carry unit in column 6 or 2.
           </Conclusion>
 
           <Conclusion
@@ -242,7 +242,7 @@ const Conclusions = () => {
             universality. Regardless of the items they will always strengthen
             our composition and carry units. If we look at offensive units,
             magic ones such as Karma and Velkoz were more common. Jax stands out
-            from the others, and similarly to Nidalee he was played only few
+            from the others, and similarly to Nidalee he was played only a few
             times.
           </Conclusion>
 
@@ -270,78 +270,18 @@ const Conclusions = () => {
 
           <Conclusion
             chartType={"popularity"}
-            champions={[
-              "aatrox",
-              "gragas",
-              "kled",
-              "leona",
-              "poppy",
-              "udyr",
-              "warwick",
-              "vladimir",
-            ]}
+            champions={["aatrox", "ziggs"]}
             compareType={"regions"}
             players={[fullPlayerList]}
-            titles={[
-              "aatrox",
-              "gragas",
-              "kled",
-              "leona",
-              "poppy",
-              "udyr",
-              "warwick",
-              "vladimir",
-            ]}
+            titles={["aatrox", "ziggs"]}
             end={["2-6"]}
-            width={"20%"}
+            width={"30%"}
             height={"150px"}
           >
-            Regions Early Game Defensive
-          </Conclusion>
-
-          <Conclusion
-            chartType={"popularity"}
-            champions={["kalista", "khazix", "lissandra", "vayne", "ziggs"]}
-            compareType={"regions"}
-            players={[fullPlayerList]}
-            titles={["kalista", "khazix", "lissandra", "vayne", "ziggs"]}
-            end={["2-6"]}
-            width={"20%"}
-            height={"150px"}
-          >
-            Regions Early Game Ofensive
-          </Conclusion>
-
-          <Conclusion
-            chartType={"popularity"}
-            champions={[
-              "draven",
-              "riven",
-              "yasuo",
-              "brand",
-              "aphelios",
-              "karma",
-              "teemo",
-              "velkoz",
-            ]}
-            compareType={"regions"}
-            players={[fullPlayerList]}
-            titles={[
-              "draven",
-              "riven",
-              "yasuo",
-              "brand",
-              "aphelios",
-              "karma",
-              "teemo",
-              "velkoz",
-            ]}
-            start={["5-1"]}
-            end={["6-6"]}
-            width={"20%"}
-            height={"150px"}
-          >
-            Regions Late Game Carries
+            The units played in each region were very similar to each other.
+            Only Asia differed from the rest in individual cases. For example,
+            Aatrox and Ziggs were played more often in Asia than in Europe or
+            America.
           </Conclusion>
         </section>
       </article>

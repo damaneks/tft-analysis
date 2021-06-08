@@ -57,6 +57,14 @@ export const playersListDescription = {
     wins: 123,
     top4: 338,
   },
+  k3soju: {
+    region: "America",
+    stream: "https://www.twitch.tv/k3soju",
+    img: "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/7f/ENX_k3soju_2016_Summer.png",
+    played: 548,
+    wins: 82,
+    top4: 348,
+  },
   bebe872: {
     region: "Asia",
     stream: "https://www.twitch.tv/bebe872",
@@ -68,18 +76,10 @@ export const playersListDescription = {
   korpick: {
     region: "Asia",
     stream: "https://www.twitch.tv/korpick2",
-    img: "https://w.namu.la/s/c26de94e683b2ccccf8a1458f12f855dd9c9f4542ff2c2a4c92d3fb51707be0687ee2ed7ec0b5bcf33c2083a88c500ac2a407ef8d0ad4d330d86847ecd1c244e21555961cd77dc1e113caeb4a7d946c9c899b099c6ddca204942b28e75b3007f271b4a33de7a95ead255e33556a2125f",
+    img: "https://image.fmkorea.com/files/attach/new/20200215/14339012/1689468617/2710761182/933c89ff380522ca9f4024b0bcf992de.jpg",
     played: 337,
     wins: 66,
     top4: 212,
-  },
-  k3soju: {
-    region: "America",
-    stream: "https://www.twitch.tv/k3soju",
-    img: "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/7f/ENX_k3soju_2016_Summer.png/revision/latest?cb=20170801203612",
-    played: 548,
-    wins: 82,
-    top4: 348,
   },
   cosmotv: {
     region: "Asia",
