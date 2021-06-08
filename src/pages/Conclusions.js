@@ -280,7 +280,7 @@ const Conclusions = () => {
             height={"150px"}
           >
             The units played in each region did not vary much. Only Asia in
-            isolated cases stood out from the rest. For example, in contrast to
+            single cases stood out from the rest. For example, in contrast to
             Europe and America, Aatrox and Ziggs were played more often and Ashe
             was only played once.
           </Conclusion>
