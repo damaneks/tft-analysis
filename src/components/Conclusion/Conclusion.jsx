@@ -5,7 +5,7 @@ import SpecificPopularityChart from "../SpecificPopularityChart/SpecificPopulari
 import styles from "./Conclusion.module.css";
 
 const Conclusion = (props) => {
-  const champions = props.champions;
+  const champions = props.champions ? props.champions : "null";
   const width = props.width ? props.width : "30%";
   const height = props.height ? props.height : "250px";
   const players = props.players
@@ -26,9 +26,11 @@ const Conclusion = (props) => {
       : props.end
     : "7-6";
 
+  if (champions != "null") {
   return (
     <>
       <h1 className={styles.title}>{props.title}</h1>
+      
       <div className={styles.container}>
         {props.chartType !== "popularity"
           ? champions.map((champion) => (
@@ -51,6 +53,7 @@ const Conclusion = (props) => {
                 />
               </div>
             ))}
+          
 
         <div className={styles.textBox}>
           <p>{props.children}</p>
@@ -58,6 +61,19 @@ const Conclusion = (props) => {
       </div>
     </>
   );
+          } else {
+            return (
+    <>
+      <h1 className={styles.title}>{props.title}</h1>
+      
+      <div className={styles.container}>
+        <div className={styles.textBox}>
+          <p>{props.children}</p>
+        </div>
+      </div>
+    </>
+  );
+          }
 };
 
 export default Conclusion;

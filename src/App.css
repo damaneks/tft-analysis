@@ -96,6 +96,11 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  color: #eeeeee;
+  font-family: "Raleway", sans-serif;
+}
+
 header {
   width: 100%;
 }
