@@ -26,7 +26,7 @@ const Conclusion = (props) => {
       : props.end
     : "7-6";
 
-  if (champions != "null") {
+  if (champions !== "null") {
   return (
     <>
       <h1 className={styles.title}>{props.title}</h1>
